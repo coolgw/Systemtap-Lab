@@ -32,5 +32,5 @@ https://doc.opensuse.org/documentation/leap/tuning/html/book-tuning/cha-tuning-s
 
 zypper in systemtap
 zypper se kernel-*-debuginfo
-zypper in -y  kernel-debug-debuginfo kernel-source gcc
+zypper in -y  kernel-debug-debuginfo kernel-source gcc git
 zypper in -y kernel-debug-devel-debuginfo kernel-default-debuginfo kernel-default-devel-debuginfo
