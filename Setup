@@ -30,7 +30,13 @@ https://www.configserverfirewall.com/debian-linux/enable-debian-root-ssh-login/
 install systemtap-setup:
 https://doc.opensuse.org/documentation/leap/tuning/html/book-tuning/cha-tuning-systemtap.html#sec-tuning-systemtap-setup
 
-zypper in systemtap
+#zypper in systemtap  // since current build in repo can not match current TW kernel, so we have to install from source code
 zypper se kernel-*-debuginfo
 zypper in -y  kernel-debug-debuginfo kernel-source gcc git
 zypper in -y kernel-debug-devel-debuginfo kernel-default-debuginfo kernel-default-devel-debuginfo
+
+build systemtap
+git clone git://sourceware.org/git/systemtap.git
+
+
+
