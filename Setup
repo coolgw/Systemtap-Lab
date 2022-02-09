@@ -1,0 +1,24 @@
+Env
+cat /etc/os-release 
+NAME="openSUSE Tumbleweed"
+# VERSION="20220206"
+ID="opensuse-tumbleweed"
+ID_LIKE="opensuse suse"
+VERSION_ID="20220206"
+PRETTY_NAME="openSUSE Tumbleweed"
+ANSI_COLOR="0;32"
+CPE_NAME="cpe:/o:opensuse:tumbleweed:20220206"
+BUG_REPORT_URL="https://bugs.opensuse.org"
+HOME_URL="https://www.opensuse.org/"
+DOCUMENTATION_URL="https://en.opensuse.org/Portal:Tumbleweed"
+LOGO="distributor-logo-Tumbleweed"
+
+zypper lr -u
+4 | debug               | debug               | Yes     | (r ) Yes  | Yes     | https://downloadcontent.opensuse.org/debug/tumbleweed/repo/oss
+5 | non-oss             | non-oss             | Yes     | (r ) Yes  | Yes     | https://downloadcontent.opensuse.org/tumbleweed/repo/non-oss
+6 | openSUSE-20220206-0 | openSUSE-20220206-0 | Yes     | (r ) Yes  | Yes     | http://openqa.opensuse.org/assets/repo/openSUSE-Tumbleweed-oss-i586-x86_64-Snapshot20220206
+
+set sshd allow root:
+https://www.configserverfirewall.com/debian-linux/enable-debian-root-ssh-login/
+install systemtap-setup:
+https://doc.opensuse.org/documentation/leap/tuning/html/book-tuning/cha-tuning-systemtap.html#sec-tuning-systemtap-setup
