@@ -63,4 +63,4 @@ Simple test:
 
 Better install kdump also, since systemtap script can let your system crash
 zypper in yast2-kdump
-
+zypper in -y crash
