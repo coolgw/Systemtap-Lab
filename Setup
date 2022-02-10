@@ -55,9 +55,9 @@ i  | kernel-default-debugsource     | Debug sources for package kernel-default  
 i+ | kernel-default-devel           | Development files necessary for building kernel modules       | package
 i+ | kernel-default-devel-debuginfo | Debug information for package kernel-default-devel            | package
 
+Better install source code also:
 i+ | kernel-source                  | The Linux Kernel Sources                                      | package
 
 Simple test:
 # stap -ve 'probe begin { log("hello world") exit () }'
-# stap -c df -e 'probe syscall.* { if (target()==pid()) log(name." ".argstr) }'
 
