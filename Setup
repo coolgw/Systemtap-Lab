@@ -31,9 +31,7 @@ install systemtap-setup:
 https://doc.opensuse.org/documentation/leap/tuning/html/book-tuning/cha-tuning-systemtap.html#sec-tuning-systemtap-setup
 
 #zypper in systemtap  // since current build in repo can not match current TW kernel, so we have to install from source code
-zypper se kernel-*-debuginfo
-zypper in -y  kernel-debug-debuginfo kernel-source gcc git
-zypper in -y kernel-debug-devel-debuginfo kernel-default-debuginfo kernel-default-devel-debuginfo
+zypper in -y  gcc git
 
 build systemtap
 git clone git://sourceware.org/git/systemtap.git
@@ -41,7 +39,25 @@ zypper in -y gcc-c++
 zypper in -y libdw-devel
 ./configure
 make
+make install
 
+zypper se kernel-default    
+Loading repository data...
+Reading installed packages...
 
+S  | Name                           | Summary                                                       | Type
+---+--------------------------------+---------------------------------------------------------------+--------
+i+ | kernel-default                 | The Standard Kernel                                           | package
+i+ | kernel-default-base            | The Standard Kernel - base modules                            | package
+   | kernel-default-base-rebuild    | Empty package to ensure rebuilding kernel-default-base in OBS | package
+i+ | kernel-default-debuginfo       | Debug information for package kernel-default                  | package
+i  | kernel-default-debugsource     | Debug sources for package kernel-default                      | package
+i+ | kernel-default-devel           | Development files necessary for building kernel modules       | package
+i+ | kernel-default-devel-debuginfo | Debug information for package kernel-default-devel            | package
 
+i+ | kernel-source                          | The Linux Kernel Sources                                          | package
+
+Simple test:
+# stap -ve 'probe begin { log("hello world") exit () }'
+# stap -c df -e 'probe syscall.* { if (target()==pid()) log(name." ".argstr) }'
 
