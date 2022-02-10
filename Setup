@@ -61,3 +61,6 @@ i+ | kernel-source                  | The Linux Kernel Sources                  
 Simple test:
 # stap -ve 'probe begin { log("hello world") exit () }'
 
+Better install kdump also, since systemtap script can let your system crash
+zypper in yast2-kdump
+
