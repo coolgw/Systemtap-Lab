@@ -37,6 +37,11 @@ zypper in -y kernel-debug-devel-debuginfo kernel-default-debuginfo kernel-defaul
 
 build systemtap
 git clone git://sourceware.org/git/systemtap.git
+zypper in -y gcc-c++
+zypper in -y libdw-devel
+./configure
+make
+
 
 
 
