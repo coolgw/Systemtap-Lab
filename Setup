@@ -26,6 +26,10 @@ Repository priorities are without effect. All enabled repositories share the sam
 
 set sshd allow root:
 https://www.configserverfirewall.com/debian-linux/enable-debian-root-ssh-login/
+Add one line config in following file
+# cat /etc/ssh/sshd_config
+PermitRootLogin yes
+
 
 install systemtap-setup:
 https://doc.opensuse.org/documentation/leap/tuning/html/book-tuning/cha-tuning-systemtap.html#sec-tuning-systemtap-setup
