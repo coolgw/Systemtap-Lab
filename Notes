@@ -1,0 +1,3 @@
+Opensuse
+If you need gcc -static can work with lib, then you need install static lib. 
+zypper in -y glibc-devel-static
